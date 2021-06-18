@@ -17,9 +17,6 @@ COPY setup.py README.md requirements.txt /opt/cell-death-detection/
 RUN sed -i "/tensorflow>/d" /opt/cell-death-detection/requirements.txt && \
     pip install --no-cache-dir -r /opt/cell-death-detection/requirements.txt
 
-# Install deepcell via setup.py
-RUN pip install /opt/cell-death-detection
-
 # Copy over deepcell notebooks
 COPY notebooks/ /notebooks/
 
